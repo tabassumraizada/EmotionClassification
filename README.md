@@ -7,7 +7,7 @@ For this practicum project I intend to work with one or more of the publicly ava
 2)	SEED IV dataset (http://bcmi.sjtu.edu.cn/~seed/contacts.html)
 3)	Kaggle : EEG Brainwave Dataset: Feeling Emotions. https://www.kaggle.com/birdy654/eeg-brainwave-dataset-feeling-emotions  (MUSE  EEG headband using  sensors TP9, AF7, AF8 and TP10)
 # Deliverables
-The primary goal of the project is to be able to classify EEG data using deep neural networks into the various emotion states. In additional I will try to combine EEG data with other modalities like eye movements and evaluate the impact on accuracy. We will try to compare these results with other conventional shallow methods for e.g. SVM. 
+The primary goal of the project is to be able to classify EEG data using deep neural networks into the various emotion states. In addition I will try to combine EEG data with other modalities like eye movements and evaluate the impact on accuracy. We will try to compare these results with other conventional shallow methods for e.g. SVM. 
 # Experimental Setup and description of the above datasets:
 1) DEAP(Dataset of Emotion Analysis using EEG and Physiological and Video Signals) 
 This is a benchmark dataset for emotion analysis using the EEG, physiological and video signals. Thirty-two participants are shown 40 videos each with one-minute duration. The facial expressions and the EEG signals were recorded for each participant. The EEG signals were recorded from 32 different channels. Most of the publicly available EEG datasets have fewer amounts of data per participant. For further details refer to:
