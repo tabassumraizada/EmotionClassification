@@ -1,0 +1,2 @@
+# Folder Content Description
+This folder contains script for running the various models on the 3 datasets used. Access to DEAP and SEED-IV dataset need to be obtained from the universities that have made from the universities that have generated those dataset. The script will refer to the path where they were downloaded on the local computer. 
