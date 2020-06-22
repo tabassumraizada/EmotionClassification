@@ -18,14 +18,14 @@ http://bcmi.sjtu.edu.cn/~seed/seed-iv.html#
 The data was collected from two people (1 male, 1 female) for 3 minutes per state - positive, neutral, negative. Muse EEG headband was used to record data from TP9, AF7, AF8 and TP10 EEG placements via dry electrodes. Sixty  seconds  of  data  were recorded  from  two subjects  for 6 film  clips  producing 12  minutes (720 seconds) of brain activity data. Six minutes of resting neutral data is also recorded, stimuli used to evoke the emotions are movie clips shown to the participants. Participants  were  asked  to  watch  the  film  clips without  making  any conscious  movements  (eg. drinking  coffee)  to  prevent  the influence of Electromyographic (EMG) signals resulting from muscle movement which are highly prominent given their signal  strength. With  a  variable  frequency  resampled  to  150Hz,  this resulted  in  a  dataset  of  324,000  data  points  collected  from  the waves  produced  by  the brain.  Physiological responses like a smile is indicative of an emotional state hence both  EEG  and  facial  EMG  signals were used. Methodology from earlier study on video browsing strategies was used to   extract  2400  features  through  a  sliding  window  of  1 second beginning  at  t=0  and t=0.5. 
 
 # References:
-J. J. Bird, L. J. Manso, E. P. Ribiero, A. Ekart, and D. R. Faria, “A study on mental state classification using eeg-based brain-machine interface,”in 9th International Conference on Intelligent Systems, IEEE, 2018.
+[1] J. J. Bird, L. J. Manso, E. P. Ribiero, A. Ekart, and D. R. Faria, “A study on mental state classification using eeg-based brain-machine interface,”in 9th International Conference on Intelligent Systems, IEEE, 2018.
 
-J. J. Bird, A. Ekart, C. D. Buckingham, and D. R. Faria, “Mental emotional sentiment classification with an eeg-based brain-machine interface,” in The International Conference on Digital Image and Signal Processing (DISP’19), Springer, 2019.
+[2] J. J. Bird, A. Ekart, C. D. Buckingham, and D. R. Faria, “Mental emotional sentiment classification with an eeg-based brain-machine interface,” in The International Conference on Digital Image and Signal Processing (DISP’19), Springer, 2019.
 
-Wei-Long Zheng, Wei Liu, Yifei Lu, Bao-Liang Lu, and Andrzej Cichocki, EmotionMeter: A Multimodal Framework for Recognizing Human Emotions. IEEE Transactions on Cybernetics, Volume: 49, Issue: 3, March 2019, Pages: 1110-1122, DOI: 10.1109/TCYB.2018.2797176.
+[3] Wei-Long Zheng, Wei Liu, Yifei Lu, Bao-Liang Lu, and Andrzej Cichocki, EmotionMeter: A Multimodal Framework for Recognizing Human Emotions. IEEE Transactions on Cybernetics, Volume: 49, Issue: 3, March 2019, Pages: 1110-1122, DOI: 10.1109/TCYB.2018.2797176.
 
-"DEAP: A Database for Emotion Analysis using Physiological Signals", S. Koelstra, C. Muehl, M. Soleymani, J.-S. Lee, A. Yazdani, T. Ebrahimi, T. Pun, A. Nijholt, I. Patras, IEEE Transactions on Affective Computing, Special Issue on Naturalistic Affect Resources for System Building and Evaluation
+[4] "DEAP: A Database for Emotion Analysis using Physiological Signals", S. Koelstra, C. Muehl, M. Soleymani, J.-S. Lee, A. Yazdani, T. Ebrahimi, T. Pun, A. Nijholt, I. Patras, IEEE Transactions on Affective Computing, Special Issue on Naturalistic Affect Resources for System Building and Evaluation
 
-"What are emotions? And how can they be measured", K.R. Scherer, Social Science Information,vol. 44, no. 4, pp. 695-729, 2005.
+[5] "What are emotions? And how can they be measured", K.R. Scherer, Social Science Information,vol. 44, no. 4, pp. 695-729, 2005.
 
-Y. Yang, Q. Wu, M. Qiu, Y. Wang and X. Chen, "Emotion Recognition from Multi-Channel EEG through Parallel Convolutional Recurrent Neural Network," 2018 International Joint Conference on Neural Networks (IJCNN), Rio de Janeiro, 2018, pp. 1-7, doi: 10.1109/IJCNN.2018.8489331.
+[6] Y. Yang, Q. Wu, M. Qiu, Y. Wang and X. Chen, "Emotion Recognition from Multi-Channel EEG through Parallel Convolutional Recurrent Neural Network," 2018 International Joint Conference on Neural Networks (IJCNN), Rio de Janeiro, 2018, pp. 1-7, doi: 10.1109/IJCNN.2018.8489331.
