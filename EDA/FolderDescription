@@ -1,3 +1,7 @@
 # Description of folder contents
 
-This folder contains Jupyter Notebook for EDA done on the datasets used
+This folder contains Jupyter Notebook for EDA done on the datasets used. Please note that this github site does not keep any of the datasets. To get access to Deap dataset , you will need to sign EULA and send a request to DEAP team: 
+http://www.eecs.qmul.ac.uk/mmv/datasets/deap/download.html
+
+Similarly to get access to the SEED-IV used follow this link:
+http://bcmi.sjtu.edu.cn/~seed/downloads.html
