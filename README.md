@@ -16,6 +16,31 @@ http://www.eecs.qmul.ac.uk/mmv/datasets/deap/readme.html
 http://bcmi.sjtu.edu.cn/~seed/seed-iv.html#
 3) Kaggle EEG Brainwave Dataset:
 The data was collected from two people (1 male, 1 female) for 3 minutes per state - positive, neutral, negative. Muse EEG headband was used to record data from TP9, AF7, AF8 and TP10 EEG placements via dry electrodes. Sixty  seconds  of  data  were recorded  from  two subjects  for 6 film  clips  producing 12  minutes (720 seconds) of brain activity data. Six minutes of resting neutral data is also recorded, stimuli used to evoke the emotions are movie clips shown to the participants. Participants  were  asked  to  watch  the  film  clips without  making  any conscious  movements  (eg. drinking  coffee)  to  prevent  the influence of Electromyographic (EMG) signals resulting from muscle movement which are highly prominent given their signal  strength. With  a  variable  frequency  resampled  to  150Hz,  this resulted  in  a  dataset  of  324,000  data  points  collected  from  the waves  produced  by  the brain.  Physiological responses like a smile is indicative of an emotional state hence both  EEG  and  facial  EMG  signals were used. Methodology from earlier study on video browsing strategies was used to   extract  2400  features  through  a  sliding  window  of  1 second beginning  at  t=0  and t=0.5. 
+# SEED-IV Model results summary:
+
+| Model run | Test Accuracy  |
+| :------------ | -----:|
+| Model 1: Single Modality, using DE data from 6-channels (FT7, T7, TP7, FT8, T8, P8) and 3-frequency bands (α, β and γ) | 0.689  |
+| Model 2: Single Modality, using eye movement data | 0.7037 (1st run), 0.6962 (2nd run)  |
+| Model 3: Multi-Modal with EEG and eye movement data | 0.7111  |
+| Model 4: Single Modality, using DE data from 41-channels (0-40) and 5-frequency bands (δ , θ ,α, β and γ) | 0.6037  |
+| Model 5: Multi-Modal with EEG {using DE data from 41-channels (0-40) and 5-frequency bands (δ , θ ,α, β and γ)} and eye movement data | 0.7333  |
+
+*Refer to the following file for Models 1-3: SEED_SingleandMultiModalityModels_6channels_V2.ipynb
+Refer to the following file for Models 4-5: SEED_SingleandMultiModalityModels_41channels.ipynb*
+
+**Classification Report from Model 3:**
+              precision    recall  f1-score   support
+
+     neutral       0.69      0.68      0.68        65
+         sad       0.70      0.82      0.75        71
+        fear       0.74      0.68      0.71        66
+       happy       0.76      0.69      0.72        68
+
+
+We see from the results above that even though precision (percentage of your results which are relevant) is the highest on happy state, recall (refers to the percentage of total relevant results correctly classified by your algorithm) is high for sad emotion state. Given that the experiments was under a controlled setting and hence the participants are more relaxed hence it is probably harder to elicit a fear response by showing videos. However sad emotion did seem to be more powerful in EEG signals than over emotion states
+
+Given the results of test accuracy between Model 3 and 5 we can see that including data from 35 additional channels and all 5 instead of the earlier 3 frequency bands resulted in a modest improvement. This confirms that the 6 channels FT7, T7, TP7, FT8, T8, P8 are the most useful for emotional state classification.
 
 # References:
 [1] J. J. Bird, L. J. Manso, E. P. Ribiero, A. Ekart, and D. R. Faria, “A study on mental state classification using eeg-based brain-machine interface,”in 9th International Conference on Intelligent Systems, IEEE, 2018.
