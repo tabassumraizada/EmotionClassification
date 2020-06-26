@@ -1,4 +1,3 @@
-# UNDER DEVELOPMENT
 # Project Background and Description
 Human emotions are an important aspect of Human-Computer interaction. It can be inferred from multiple modalities like facial expressions, eye movements, skin temperature, EKG, electroencephalogram (EEG) measurement to name a few. Being able to predict a person’s emotional state correctly can have can have several practical applications for e.g. for a pilot about to go on an important mission, patients in rehabilitation centers, mental state of doctors and healthcare workers in stressful positions, risk  and  safety  management  system  used  by mental-health  practitioners or even personalized gaming experience. Dolyb Labs who are known for producing great sound effects in cinema use g.Nautilus PRO wearable EEG device to study emotional responses of their audiences while they are watching videos. The scientists at Dolby Labs try to better understand what makes the audience engaged, what makes their skin blush, increase their heart-rate or give them goose bumps.
 # Project Scope
@@ -12,10 +11,27 @@ The primary goal of the project is to be able to classify EEG data using deep ne
 1) DEAP(Dataset of Emotion Analysis using EEG and Physiological and Video Signals) 
 This is a benchmark dataset for emotion analysis using the EEG, physiological and video signals. Thirty-two participants are shown 40 videos each with one-minute duration. The facial expressions and the EEG signals were recorded for each participant. The EEG signals were recorded from 32 different channels. Most of the publicly available EEG datasets have fewer amounts of data per participant. For further details refer to:
 http://www.eecs.qmul.ac.uk/mmv/datasets/deap/readme.html
-2) SEED IV: 15 subjects were shown video clips ellicity happy/sad/neutral/fear emotions and EEG was recorded over 62 channels (with eye-tracking) for 3 sessions per subject (24 trials per session). Refer to the following link for further details about the dataset:
+2) SEED IV: 15 subjects (8 females, 7 males) were shown video clips to ellicit happy/sad/neutral/fear emotions and EEG was recorded over 62 channels (with eye-tracking) for 3 sessions per subject (24 trials per session). EEG data from 62-channels was collected at 1000hz sampling rate as the participants watched the videos to elicit the expected emotional response. This raw EEG data was down sampled to a 200 Hz sampling rate and then processed with a bandpass filter between 1 Hz to 75 Hz. The EEG feature smooth files contains two types of features, power spectral density (PSD) and differential entropy (DE), which was extracted using short-term Fourier transforms with a 4 s time window without overlapping. These features were extracted along five frequency bands for each channel: 
+1.	delta: 1–4 Hz
+2.	theta: 4–8 Hz;
+3.	alpha: 8–14 Hz
+4.	beta: 14–31 Hz
+5.	gamma: 31–50 Hz
+
+Alpha, Beta and Gamma have been found to have the most impact on emotion analysis results [3]
+
+Eye movement data was also recorded using [eye-tracking glasses](https://imotions.com/hardware/smi-eye-tracking-glasses/). For eye movements, various features from different detailed parameters as shown below were available in the dataset:
+
+![](/images/Eye_Movement_Features.JPG)
+Refer to the following link for further details about the dataset:
 http://bcmi.sjtu.edu.cn/~seed/seed-iv.html#
+
 3) Kaggle EEG Brainwave Dataset:
 The data was collected from two people (1 male, 1 female) for 3 minutes per state - positive, neutral, negative. Muse EEG headband was used to record data from TP9, AF7, AF8 and TP10 EEG placements via dry electrodes. Sixty  seconds  of  data  were recorded  from  two subjects  for 6 film  clips  producing 12  minutes (720 seconds) of brain activity data. Six minutes of resting neutral data is also recorded, stimuli used to evoke the emotions are movie clips shown to the participants. Participants  were  asked  to  watch  the  film  clips without  making  any conscious  movements  (eg. drinking  coffee)  to  prevent  the influence of Electromyographic (EMG) signals resulting from muscle movement which are highly prominent given their signal  strength. With  a  variable  frequency  resampled  to  150Hz,  this resulted  in  a  dataset  of  324,000  data  points  collected  from  the waves  produced  by  the brain.  Physiological responses like a smile is indicative of an emotional state hence both  EEG  and  facial  EMG  signals were used. Methodology from earlier study on video browsing strategies was used to   extract  2400  features  through  a  sliding  window  of  1 second beginning  at  t=0  and t=0.5. 
+
+# SEED-IV data and Model development:
+
+
 # SEED-IV Model results summary:
 
 | Model run | Test Accuracy  |
