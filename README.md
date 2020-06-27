@@ -132,7 +132,7 @@ Performance with and without the use of baseline data has almost a 30 point diff
 
 **Model 2: Multi-Modal using EEG and Video Data**
 
-| Subject | Test Accuracy for Model using video data only | Test Accuracy for Functional model using video and temporal EEG data |
+| Subject | Test Accuracy for Model using video data only | Test Accuracy for Functional model using video and spatial EEG data |
 | :------------ | ------:| -----:|
 | Subject 01 | 97.36 | 98.28 |
 | Subject 02 | 98.15 | 98.74 |
