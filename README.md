@@ -121,7 +121,7 @@ We used a VGG16 pretrained model which takes an input image of shape (224 X 224 
 
 **Model 1: Hybrid neural network (CNN+RNN model)**
 
-                                    Valence Classification                                    Arousal Classification
+                                          Valence Classification                               Arousal Classification
 |...| With Baseline | Without baseline data removal| With baseline | Without baseline data removal|
 | :------------ | ------:| -----:| -----:| -----:|
 | Subject 01 (for 10 epochs, 2 fold run) |82.50| 51.89 |91.75| 56.50|
