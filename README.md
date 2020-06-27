@@ -24,6 +24,7 @@ Alpha, Beta and Gamma have been found to have the most impact on emotion analysi
 Eye movement data was also recorded using [eye-tracking glasses](https://imotions.com/hardware/smi-eye-tracking-glasses/). For eye movements, various features from different detailed parameters as shown below were available in the dataset:
 
 ![](/images/Eye_Movement_Features.JPG)
+
 Eye raw data includes blink, event, fixation, PD, pupil, saccade files for each experiment along with eye features smooth file with pre-processed data.
 
 Refer to the following link for further details about the dataset:
@@ -57,6 +58,7 @@ Models 1-3: SEED_SingleandMultiModalityModels_6channels_V2.ipynb
 Models 4-5: SEED_SingleandMultiModalityModels_41channels.ipynb*
 
 **Classification Report from Model 3:**
+              
               precision    recall  f1-score   support
 
      neutral       0.69      0.68      0.68        65
@@ -71,14 +73,14 @@ Given the results of test accuracy between Model 3 and 5 we can see that includi
 
 # DEAP Model development:
 
-Model 1: Hybrid deep learning model (Parallel Convolutional Recurrent Neural Network) [6]
+**Model 1: Hybrid deep learning model (Parallel Convolutional Recurrent Neural Network) [6]**
 
 Original shape of data for each subject is in the shape: 
 
 Trials	Channels, EEG Signals down sampled to 128 Hz
 (40,    40,       8064)
 
-![] (/images/InputShape_DEAP.JPG)
+![](/images/InputShape_DEAP.JPG)
 
 [Pre-processing](https://github.com/tabassumraizada/EmotionClassification/blob/master/Models/Deap/Deap_Preprocess_v2.ipynb) applied to the above dataset for each subject:
 
@@ -94,7 +96,7 @@ Trials	Channels, EEG Signals down sampled to 128 Hz
 This was another unique application used in this paper [6] where instead of using chain like EEG data sequence we convert it into a 2D spatial frame as show below ():
 ![](/images/2dMatrix.JPG)
 
-Out of the pre-processing step:
+Output of the pre-processing step:
 
       CNN model output of shape:
 
@@ -108,10 +110,9 @@ Out of the pre-processing step:
 1.Uses Parallel CNN convolution layers followed by a depth concatenate layer which helps convert the 2-D shape of the spatial data we saw above into a 3D cube. CNN layers help in extracting spatial features from 2D channel frames.
 2.RNN model used for extracting temporal features. Long Short-Term Memory (LSTM) models the context information for streaming 1D data vectors
 
-Model 2: Multi-Model using CNN preprocessed data with EEG temporal features along with Video data
+**Model 2: Multi-Model using CNN preprocessed data with EEG temporal features along with Video data**
 
-We break the one-minute video into 60 frames. Each frame then corresponds to the 1 sec segment obtained from EEG enabling up to combine the data-set for multi-modal processing.
-Here a valence of 5 is used as a threshold to divide the trials into two classes - High and Low category which corresponds to value >5 and <=5 respectively. We first run the [model with only video data](https://github.com/tabassumraizada/EmotionClassification/blob/master/Models/Deap/Deap_Video_Naive_Classification_s01.ipynb) by subject. 
+We break the one-minute video for each trial into 60 frames. Each frame then corresponds to the 1 sec segment obtained from EEG enabling up to combine the data-set for multi-modal processing. Here a valence of 5 is used as a threshold to divide the trials into two classes - High and Low category which corresponds to value >5 and <=5 respectively. We first run the [model with only video data](https://github.com/tabassumraizada/EmotionClassification/blob/master/Models/Deap/Deap_Video_Naive_Classification_s01.ipynb) by subject. 
 
 We used a VGG16 pretrained model which takes an input image of shape (224 X 224 X 3). Since our images are in a different size (576, 720, 3) we had to reshape all of them using resize() function of skimage.transform to do this. In addition we also used preprocess_input() function of keras.applications.vgg16 to preprocess the input data as per the model’s requirement. 
 ![](/images/Model_Video_EEG.JPG)
@@ -119,7 +120,7 @@ We used a VGG16 pretrained model which takes an input image of shape (224 X 224 
 # DEAP Model results summary:
 
 **Model 1: Hybrid neural network (CNN+RNN model) **
-| | Valence Classification | Arousal Classification|
+| | Valence Classification | | Arousal Classification| |
 | | With Baseline | Without baseline data removal| | With baseline | Without baseline data removal|
 | :------------ | ------:| -----:| -----:| -----:|
 | Subject 01 (for 10 epochs, 2 fold run) |82.50| 51.89 |91.75| 56.50|
