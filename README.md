@@ -6,7 +6,7 @@ For this practicum project I intend to work with one or more of the publicly ava
 2)	SEED IV dataset (http://bcmi.sjtu.edu.cn/~seed/contacts.html)
 3)	Kaggle : EEG Brainwave Dataset: Feeling Emotions. https://www.kaggle.com/birdy654/eeg-brainwave-dataset-feeling-emotions  (MUSE  EEG headband using  sensors TP9, AF7, AF8 and TP10)
 # Deliverables
-The primary goal of the project is to be able to classify EEG data using deep neural networks into the various emotion states. In addition I will try to combine EEG data with other modalities like eye movements and evaluate the impact on accuracy. We will try to compare these results with other conventional shallow methods for e.g. SVM. 
+The primary goal of the project is to be able to classify EEG data using deep neural networks into the various emotion states. In addition I will try to combine EEG data with other modalities like eye movements and evaluate the impact on accuracy.  
 # Experimental Setup and description of the above datasets:
 1) DEAP(Dataset of Emotion Analysis using EEG and Physiological and Video Signals) 
 This is a benchmark dataset for emotion analysis using the EEG, physiological and video signals. Thirty-two participants are shown 40 videos each with one-minute duration. The facial expressions and the EEG signals were recorded for each participant. The EEG signals were recorded from 32 different channels. Most of the publicly available EEG datasets have fewer amounts of data per participant. For further details refer to:
@@ -31,7 +31,7 @@ Refer to the following link for further details about the dataset:
 http://bcmi.sjtu.edu.cn/~seed/seed-iv.html#
 
 3) Kaggle EEG Brainwave Dataset:
-The data was collected from two people (1 male, 1 female) for 3 minutes per state - positive, neutral, negative. Muse EEG headband was used to record data from TP9, AF7, AF8 and TP10 EEG placements via dry electrodes. Sixty  seconds  of  data  were recorded  from  two subjects  for 6 film  clips  producing 12  minutes (720 seconds) of brain activity data. Six minutes of resting neutral data is also recorded, stimuli used to evoke the emotions are movie clips shown to the participants. Participants  were  asked  to  watch  the  film  clips without  making  any conscious  movements  (eg. drinking  coffee)  to  prevent  the influence of Electromyographic (EMG) signals resulting from muscle movement which are highly prominent given their signal  strength. With  a  variable  frequency  resampled  to  150Hz,  this resulted  in  a  dataset  of  324,000  data  points  collected  from  the waves  produced  by  the brain.  Physiological responses like a smile is indicative of an emotional state hence both  EEG  and  facial  EMG  signals were used. Methodology from earlier study on video browsing strategies was used to   extract  2400  features  through  a  sliding  window  of  1 second beginning  at  t=0  and t=0.5. 
+The data was collected from two people (1 male, 1 female) for 3 minutes per state - positive, neutral, negative. Muse EEG headband was used to record data from TP9, AF7, AF8 and TP10 EEG placements via dry electrodes. Sixty  seconds  of  data  were recorded  from  two subjects  for 6 film  clips  producing 12  minutes (720 seconds) of brain activity data. Six minutes of resting neutral data is also recorded, stimuli used to evoke the emotions are movie clips shown to the participants. Participants  were  asked  to  watch  the  film  clips without  making  any conscious  movements  (eg. drinking  coffee)  to  prevent  the influence of Electromyographic (EMG) signals resulting from muscle movement which are highly prominent given their signal  strength. With  a  variable  frequency  resampled  to  150Hz,  this resulted  in  a  dataset  of  324,000  data  points  collected  from  the waves  produced  by  the brain.  Physiological responses like a smile is indicative of an emotional state hence both  EEG  and  facial  EMG  signals were used. Methodology from earlier study on video browsing strategies was used to   extract  2400  features  through  a  sliding  window  of  1 second beginning  at  t=0  and t=0.5. We have not used this dataset only for comparison purposes as this is a highly processed simple dataset.
 
 # SEED-IV Model development:
 
@@ -140,6 +140,10 @@ Performance with and without the use of baseline data has almost a 30 point diff
 | Subject 09 | 98.03 | 99.27 |
 
 Note that we ran the above models for one subject with 2400 data points corresponding to 40 trails x 60 segments per trail i.e. 2400 data points. It would need a lot of power to use the entire dataset available i.e video data for 22 participants which would have resulted in input data of size 52,800 x 576, 720, 3. Hence even though the results compared to the hybrid model look more promising we do not know how well we can generalize the results across subjects.
+
+# Conclusion 
+
+We can see from the results above that EEG data holds promise with emotion data analysis. Video and eye movement data also is shown to give great results. However it is important to have a large dataset to conduct subject-independent analysis. Multi-modal models perform better than single modalities to varying degrees. 
 
 # References:
 [1] J. J. Bird, L. J. Manso, E. P. Ribiero, A. Ekart, and D. R. Faria, “A study on mental state classification using eeg-based brain-machine interface,”in 9th International Conference on Intelligent Systems, IEEE, 2018.
